@@ -86,4 +86,11 @@ class midgardmvc_helper_urlize_tests_interface extends midgardmvc_core_tests_tes
         $url = midgardmvc_helper_urlize::string($string);
         $this->assertEquals('ib-riyt', $url);
     }
+
+    public function test_turkish()
+    {
+        $string = 'İstanbul'; // Istanbul
+        $url = midgardmvc_helper_urlize::string($string);
+        $this->assertEquals('istanbul', $url);
+    }
 }
