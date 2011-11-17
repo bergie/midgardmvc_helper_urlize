@@ -11,7 +11,7 @@
  *
  * @package midgardmvc_helper_urlize
  */
-class midgardmvc_helper_urlize_tests_interface extends midgardmvc_core_tests_testcase
+class midgardmvc_helper_urlize_tests_interface extends PHPUnit_FrameWork_TestCase
 {
     /**
      * @expectedException InvalidArgumentException
@@ -46,9 +46,9 @@ class midgardmvc_helper_urlize_tests_interface extends midgardmvc_core_tests_tes
         $this->assertEquals('kontakty', $url);
     }
 
-    /*
     public function test_korean()
     {
+        $this->markTestSkipped();
         $string = '해동검도';  // Haedong Kumdo
         $url = midgardmvc_helper_urlize::string($string);
         $this->assertEquals('haedong_kumdo', $url);
@@ -56,6 +56,7 @@ class midgardmvc_helper_urlize_tests_interface extends midgardmvc_core_tests_tes
 
     public function test_hiragana()
     {
+        $this->markTestSkipped();
         $string = 'ひらがな';
         $url = midgardmvc_helper_urlize::string($string);
         $this->assertEquals('hiragana', $url);
@@ -63,11 +64,11 @@ class midgardmvc_helper_urlize_tests_interface extends midgardmvc_core_tests_tes
 
     public function test_georgian()
     {
+        $this->markTestSkipped();
         $string = 'საქართველო';
         $url = midgardmvc_helper_urlize::string($string);
         $this->assertEquals('sakartvelo', $url);
     }
-    */
 
     public function test_arabic()
     {
