@@ -6,5 +6,4 @@ php:
 before_script:
   - ./tests/travis.sh
 
-script: phpunit --bootstrap ../midgardmvc_core/framework.php tests/interface.php
-
+script: phpunit --bootstrap vendor/midgard/midgardmvc-core/framework.php tests 
