@@ -3,7 +3,6 @@
     "type": "library",
     "description": "URL-safe text converter",
     "keywords": ["url"],
-    "version": "10.05.1beta1",
     "license": "LGPL",
     "authors": [
         {
@@ -13,7 +12,9 @@
         }
     ],
     "require": {
-        "php": ">=5.2.0",
-        "midgard/midgardmvc-core": ">=10.05.0"
+        "php": ">=5.2.0"
+    },
+    "autoload": {
+        "classmap": ["."]
     }
 }
