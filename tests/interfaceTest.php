@@ -74,7 +74,7 @@ class midgardmvc_helper_urlize_tests_interface extends PHPUnit_FrameWork_TestCas
     {
         $string = 'العربي'; // al-ʿarabiyyah
         $url = midgardmvc_helper_urlize::string($string);
-        $this->assertEquals('l-rby', $url);
+        $this->assertEquals('l_rby', $url);
 
         $string = 'عرب'; // ʿarabī
         $url = midgardmvc_helper_urlize::string($string);
@@ -85,7 +85,7 @@ class midgardmvc_helper_urlize_tests_interface extends PHPUnit_FrameWork_TestCas
     {
         $string = 'עִבְרִית'; // Ivrit
         $url = midgardmvc_helper_urlize::string($string);
-        $this->assertEquals('ib-riyt', $url);
+        $this->assertEquals('ib_riyt', $url);
     }
 
     public function test_turkish()
@@ -93,5 +93,12 @@ class midgardmvc_helper_urlize_tests_interface extends PHPUnit_FrameWork_TestCas
         $string = 'İstanbul'; // Istanbul
         $url = midgardmvc_helper_urlize::string($string);
         $this->assertEquals('istanbul', $url);
+    }
+
+    public function test_replacer()
+    {
+        $string = 'test, she said';
+        $url = midgardmvc_helper_urlize::string($string, '-');
+        $this->assertEquals($url, 'test-she-said');
     }
 }

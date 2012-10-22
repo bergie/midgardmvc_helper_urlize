@@ -1,7 +1,7 @@
 <?php
 class midgardmvc_helper_urlize
 {
-    public static function string($string, $replacer = '-')
+    public static function string($string, $replacer = '_')
     {
         if (empty($string))
         {
@@ -31,18 +31,18 @@ class midgardmvc_helper_urlize
         }
 
         // Rest of spaces to underscores
-        $string = preg_replace('/\s+/', '_', $string);
+        $string = preg_replace('/\s+/', $replacer, $string);
 
         // Regular expression for characters to replace (the ^ means an inverted character class, ie characters *not* in this class are replaced)
-        $regexp = '/[^a-zA-Z0-9_-]/';
+        $regexp = "/[^a-zA-Z0-9{$replacer}]/";
         // Replace the unsafe characters with the given replacer (which is supposed to be safe...)
         $safe = preg_replace($regexp, $replacer, $string);
 
         // Strip trailing {$replacer}s and underscores from start and end of string
-        $safe = preg_replace("/^[{$replacer}_]+|[{$replacer}_]+$/", '', $safe);
+        $safe = preg_replace("/^[{$replacer}]+|[{$replacer}]+$/", '', $safe);
 
         // Clean underscores around $replacer
-        $safe = preg_replace("/_{$replacer}|{$replacer}_/", $replacer, $safe);
+        $safe = preg_replace("/{$replacer}{$replacer}/", $replacer, $safe);
 
         // Any other cleanup routines ?
 
