@@ -90,9 +90,9 @@ class midgardmvc_helper_urlize_tests_interface extends PHPUnit_FrameWork_TestCas
 
     public function test_turkish()
     {
-        $string = 'İstanbul'; // Istanbul
+        $string = 'Sanırım hepimiz aynı şeyi düşünüyoruz.';
         $url = midgardmvc_helper_urlize::string($string);
-        $this->assertEquals('istanbul', $url);
+        $this->assertEquals('sanirim_hepimiz_ayni_seyi_dusunuyoruz', $url);
     }
 
     public function test_replacer()
