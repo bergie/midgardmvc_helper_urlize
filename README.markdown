@@ -1,4 +1,4 @@
-URL-safe text handler
+URL-safe text handler [![Build Status](https://secure.travis-ci.org/bergie/midgardmvc_helper_urlize.png)](http://travis-ci.org/bergie/midgardmvc_helper_urlize)
 =====================
 
 This library can be used for generating URL-safe names for entities from their titles.
