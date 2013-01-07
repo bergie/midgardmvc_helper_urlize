@@ -44,6 +44,9 @@ class midgardmvc_helper_urlize
         // Strip trailing {$replacer}s and underscores from start and end of string
         $safe = preg_replace("/^[{$replacer}]+|[{$replacer}]+$/", '', $safe);
 
+        // Ensure there are no duplicate replacers
+        $safe = str_replace("{$replacer}{$replacer}", $replacer, $safe);
+
         // Any other cleanup routines ?
 
         // We're done here, return $string lowercased
