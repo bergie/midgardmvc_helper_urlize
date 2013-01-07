@@ -101,4 +101,12 @@ class midgardmvc_helper_urlize_tests_interface extends PHPUnit_FrameWork_TestCas
         $url = midgardmvc_helper_urlize::string($string, '-');
         $this->assertEquals($url, 'test-she-said');
     }
+    
+    public function test_double_convert()
+    {
+        $string = 'foo & bar';
+        $clean1 = midgardmvc_helper_urlize::string($string);
+        $clean2 = midgardmvc_helper_urlize::string($clean1);
+        $this->assertEquals($clean1, $clean2);
+    }
 }
