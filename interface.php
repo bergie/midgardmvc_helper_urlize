@@ -38,11 +38,11 @@ class midgardmvc_helper_urlize
         // Replace the unsafe characters with the given replacer (which is supposed to be safe...)
         $safe = preg_replace($regexp, $replacer, $string);
 
-        // Strip trailing {$replacer}s and underscores from start and end of string
-        $safe = preg_replace("/^[{$replacer}]+|[{$replacer}]+$/", '', $safe);
-
         // Clean underscores around $replacer
         $safe = preg_replace("/{$replacer}{$replacer}/", $replacer, $safe);
+
+        // Strip trailing {$replacer}s and underscores from start and end of string
+        $safe = preg_replace("/^[{$replacer}]+|[{$replacer}]+$/", '', $safe);
 
         // Any other cleanup routines ?
 
